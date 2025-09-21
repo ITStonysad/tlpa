@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: url("tulipanes.png") no-repeat center/cover;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.dedicatoria {
+  position: relative;
+  color: #fff;
+  font-size: 1.8rem;
+  text-align: center;
+  width: 85%;
+  max-width: 700px;
+  border: 2px solid #fff;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.texto {
+  border-right: 3px solid #fff;
+  display: inline-block;
+  white-space: normal;   /* ✅ permite varias líneas */
+  word-wrap: break-word; /* ✅ ajusta texto largo */
+  overflow: hidden;
+  line-height: 1.5;
+}
+
+.corazon {
+  position: absolute;
+  bottom: -20px;
+  font-size: 2rem;
+  color: pink;
+  animation: subir 6s infinite ease-in;
+  opacity: 0.7;
+}
+
+@keyframes subir {
+  0% { transform: translateY(0) scale(1); opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
